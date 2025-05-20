@@ -52,6 +52,30 @@ impl<'a> DeclaredTypes<'a> {
             vec![ValueType::Num, ValueType::Num],
             ValueType::Num
         );
+        add_func!(
+            "sdl2_create_window",
+            sdl2_create_window,
+            vec![ValueType::Str, ValueType::Num, ValueType::Num],
+            ValueType::Null
+        );
+        add_func!(
+            "sdl2_handle_events",
+            sdl2_handle_events,
+            vec![],
+            ValueType::Null
+        );
+        add_func!(
+            "sdl2_clear_screen",
+            sdl2_clear_screen,
+            vec![],
+            ValueType::Null
+        );
+        add_func!(
+            "sdl2_update_screen",
+            sdl2_update_screen,
+            vec![],
+            ValueType::Null
+        );
 
         Self {
             funcs,
@@ -101,11 +125,8 @@ struct DeclaredStruct<'a> {
     fields: HashMap<&'a str, u8>,
 }
 impl<'a> DeclaredStruct<'a> {
-    fn new(name: &'a str,  fields: HashMap<&'a str, u8>) -> Self {
-        Self {
-            name,
-            fields,
-        }
+    fn new(name: &'a str, fields: HashMap<&'a str, u8>) -> Self {
+        Self { name, fields }
     }
 }
 

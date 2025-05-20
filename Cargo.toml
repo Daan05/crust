@@ -8,3 +8,5 @@ debug = true
 
 [dependencies]
 colored = "2.2.0"
+once_cell = "1.19"
+sdl2 = "0.35"
